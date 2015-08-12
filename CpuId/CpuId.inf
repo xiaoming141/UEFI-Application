@@ -21,4 +21,4 @@
     ShellCEntryLib
     UefiBootServicesTableLib
     UefiLib
-    Lib
+    LibC
