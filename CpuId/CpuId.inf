@@ -1,0 +1,24 @@
+[Defines]
+    INF_VERSION                    = 0x00010005
+    BASE_NAME                      = CpuId
+    FILE_GUID                      = 3366ddc1-d293-4a16-bc29-2205ad65f79c
+    MODULE_TYPE                    = UEFI_APPLICATION
+    VERSION_STRING                 = 1.0
+    ENTRY_POINT                    = ShellCEntryLib
+
+[Sources]
+    CpuId.c
+    CpuIdX64.asm
+
+#include packages which have *.h used in this package
+[Packages]
+    MdePkg\MdePkg.dec
+    ShellPkg\ShellPkg.dec
+    StdLib\StdLib.dec
+
+#include the librarys used in this package, these Libs should be in one of [[Packages]]
+[LibraryClasses]
+    ShellCEntryLib
+    UefiBootServicesTableLib
+    UefiLib
+    Lib
