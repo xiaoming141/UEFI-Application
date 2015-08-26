@@ -1,0 +1,27 @@
+[Defines]
+    INF_VERSION                    = 0x00010005
+    BASE_NAME                      = Smbus
+    FILE_GUID                      = 16eb3bc9-ef27-4f3b-bed8-cfc22326b914
+    MODULE_TYPE                    = UEFI_APPLICATION
+    VERSION_STRING                 = 1.0
+    ENTRY_POINT                    = ShellCEntryLib
+
+[Sources]
+    Smbus.c
+
+#include packages which have *.h used in this package
+[Packages]
+    MdePkg\MdePkg.dec
+    MdeModulePkg\MdeModulePkg.dec
+    ShellPkg\ShellPkg.dec
+    StdLib\StdLib.dec
+
+#include the librarys used in this package, these Libs should be in one of [[Packages]]??
+#These libraries should be described in [LibraryClasses] of owner package DSC file
+[LibraryClasses]
+    #LibStdio
+    ShellCEntryLib
+    UefiBootServicesTableLib
+    UefiLib
+    LibC
+    SmbusLib
